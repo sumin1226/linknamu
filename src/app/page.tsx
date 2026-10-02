@@ -1,17 +1,31 @@
 import LinkCard, { type LinkItem } from "@/components/LinkCard";
 import Profile, { type ProfileData } from "@/components/Profile";
 
-// TODO: 보여주기용 더미 데이터 — 실제 프로필/링크로 교체 예정
 const profile: ProfileData = {
-  name: "김클로",
-  bio: "세계 최강 바이브코더",
+  name: "박수민",
+  bio: "풀스택 개발자: AI 공부 중",
   avatarUrl: "/profile.svg",
 };
 
 const links: LinkItem[] = [
-  { id: "github", label: "GitHub", href: "https://github.com" },
-  { id: "linkedin", label: "LinkedIn", href: "https://www.linkedin.com" },
-  { id: "blog", label: "Blog", href: "https://example.com" },
+  {
+    id: "github",
+    label: "깃허브",
+    href: "https://github.com/sumin1226",
+    emoji: "📀",
+  },
+  {
+    id: "blog",
+    label: "블로그",
+    href: "https://blog.naver.com/jjkh34777",
+    emoji: "📟",
+  },
+  {
+    id: "email",
+    label: "이메일",
+    href: "mailto:parksumin0126@gmail.com",
+    emoji: "📨",
+  },
 ];
 
 export default function Home() {
@@ -20,8 +34,8 @@ export default function Home() {
       <Profile {...profile} />
 
       <nav aria-label="링크 목록" className="mt-8 flex flex-col gap-4 sm:mt-10">
-        {links.map(({ id, label, href }) => (
-          <LinkCard key={id} label={label} href={href} />
+        {links.map(({ id, label, href, emoji }) => (
+          <LinkCard key={id} label={label} href={href} emoji={emoji} />
         ))}
       </nav>
     </main>

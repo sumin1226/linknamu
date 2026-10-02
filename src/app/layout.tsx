@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -16,6 +16,10 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "링크나무",
   description: "내 모든 링크를 한 페이지에 모아 하나의 URL로 공유하세요",
+};
+
+export const viewport: Viewport = {
+  themeColor: "#170D20",
 };
 
 export default function RootLayout({

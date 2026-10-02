@@ -3,21 +3,40 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #170d20;
+  --surface: #2b1535;
+  --accent: #f146a0;
+  --foreground: #fff4f8;
+  --gold: #d9b66f;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  background-color: var(--background);
 }
 
 body {
   color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background);
+  /* 위쪽 핑크 글로우 + 오른쪽 아래 골드 잔광 */
+  background-image:
+    radial-gradient(
+      55rem 34rem at 50% -12%,
+      rgba(241, 70, 160, 0.26),
+      transparent 70%
+    ),
+    radial-gradient(
+      36rem 28rem at 108% 104%,
+      rgba(217, 182, 111, 0.1),
+      transparent 70%
+    );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--foreground);
 }
 
 @layer utilities {
